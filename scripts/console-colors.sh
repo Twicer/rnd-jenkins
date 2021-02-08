@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+BLUE='\033[1;34m'
+BLUE_BG='\033[0;37;44m'
+LBLUE='\033[1;36m'
+CYAN="\033[1;36m"
+GREEN='\033[1;32m'
+GREEN_BG='\033[0;37;42m'
+RED='\033[1;31m'
+RED_BG='\033[0;37;41m'
+YELLOW='\033[1;33m'
+WHITE="\033[1;37m"
+NC='\033[0m' # No Color
