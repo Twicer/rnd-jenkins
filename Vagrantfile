@@ -14,13 +14,24 @@ Vagrant.configure("2") do |config|
         end
     end
 
-    config.vm.define "jenkins-agent" do |jenkins|
-        jenkins.vm.box = "generic/ubuntu2004"
-
-        jenkins.vm.provision :shell, path: "scripts/provision-jenkins-agent.sh"
+    config.vm.define "agent-w10" do |jenkins|
+        jenkins.vm.box = "win10-agent"
+        jenkins.ssh.private_key_path = "~/.ssh/id_rsa.pub"
 
         jenkins.vm.provider "virtualbox" do |vb|
-            vb.name = "v-jenkins-agent"
+            vb.name = "v-jenkins-agent-win10"
+            vb.gui = true
+            vb.memory = 8192
+        end
+    end
+
+    config.vm.define "agent-u20" do |jenkins|
+        jenkins.vm.box = "generic/ubuntu2004"
+
+        jenkins.vm.provision :shell, privileged: false, path: "scripts/provision-jenkins-agent.sh"
+
+        jenkins.vm.provider "virtualbox" do |vb|
+            vb.name = "v-jenkins-agent-u20"
             vb.gui = false
             vb.memory = 4192
         end

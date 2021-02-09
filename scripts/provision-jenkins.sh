@@ -9,18 +9,21 @@ printf "${BLUE_BG} 'Jenkins Master' provision ${NC}\n"
 printf "${BLUE_BG}-----------------------------------------------${NC}\n"
 printf "Following packages will be installed:\n"
 printf -- "- homebrew\n"
-printf -- "- open-jdk@11\n"
+printf -- "- htop\n"
+printf -- "- midnight-commander\n"
 printf -- "- gcc\n"
+printf -- "- open-jdk@11\n"
 printf -- "- jenkins\n"
 printf "${BLUE_BG}-----------------------------------------------${NC}\n"
 printf "\n"
 
 source /vagrant/scripts/install-homebrew.sh
 
-brew install midnight-commander
 brew install htop
+brew install midnight-commander
 brew install gcc
-sudo apt install openjdk-11-jdk
+
+sudo apt install openjdk-11-jdk -y
 
 source /vagrant/scripts/install-jenkins.sh
 

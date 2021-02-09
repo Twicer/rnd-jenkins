@@ -5,14 +5,17 @@ source /vagrant/scripts/console-colors.sh
 
 clear
 printf "${BLUE_BG}-----------------------------------------------${NC}\n"
-printf "${BLUE_BG} 'Jenkins Agent' provision ${NC}\n"
+printf "${BLUE_BG} 'Jenkins Master' provision ${NC}\n"
 printf "${BLUE_BG}-----------------------------------------------${NC}\n"
 printf "Following packages will be installed:\n"
 printf -- "- homebrew\n"
-printf -- "- open-jdk11\n"
+printf -- "- htop\n"
+printf -- "- midnight-commander\n"
 printf -- "- gcc\n"
+printf -- "- open-jdk@11\n"
 printf "${BLUE_BG}-----------------------------------------------${NC}\n"
 printf "\n"
+
 
 source /vagrant/scripts/install-homebrew.sh
 
