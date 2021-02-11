@@ -18,3 +18,4 @@ node_modules/
 devops/version/
 tmp
 .vagrant
+win10-agent
